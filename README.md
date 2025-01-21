@@ -1,52 +1,83 @@
-# Telco_Customer_Churn_Prediction
-BA305_Final_Project
+# Telco Customer Churn Prediction: BA305_Final_Project
 
-**Customer Churn Prediction in the Telecom Industry**
+## Overview
+This project focuses on predicting customer churn in the telecom industry using machine learning. By identifying key drivers of churn and implementing targeted retention strategies, the project aims to enhance customer satisfaction and reduce churn rates.
 
-This project focuses on predicting customer churn in the telecom industry using machine learning, enabling targeted retention strategies and enhancing customer satisfaction.
+---
 
-**Key Features**
+## Key Features
+- **Dataset:**
+  - Telco Customer Churn dataset with 21 features and 7,043 observations.
+- **Target:**
+  - Predict whether a customer will churn (Yes/No).
+- **Techniques:**
+  - Addressed class imbalance using **SMOTE**.
+  - Applied hyperparameter tuning for **Random Forest**, **XGBoost**, **CatBoost**, and **LightGBM** models.
+  - Evaluated feature importance to identify key churn drivers.
 
-Dataset: The Telco Customer Churn dataset with 21 features and 7043 observations.
+---
 
-Target: Predict whether a customer will churn (Yes/No).
+## Methodology
 
-Techniques:
-Addressed class imbalance using SMOTE.
-Applied hyperparameter tuning for Random Forest, XGBoost, CatBoost, and LightGBM models.
-Evaluated feature importance to identify key churn drivers.
+### Data Preprocessing
+- Encoded categorical variables and converted binary responses to numerical values.
+- Removed multicollinear features (e.g., dropped `TotalCharges` due to high correlation with `tenure`).
 
-**Methodology**
+### Exploratory Data Analysis (EDA)
+- Identified high churn rates among:
+  - Month-to-month contract customers.
+  - Customers using electronic check as a payment method.
+- Found `tenure` and `monthly charges` as significant predictors of churn.
 
-Data Preprocessing:
-Encoded categorical variables and converted binary responses to numerical values.
-Removed multicollinear features (e.g., dropped TotalCharges due to high correlation with tenure).
+### Model Development
+- **Logistic Regression (Baseline):**
+  - Accuracy: 81%
+  - F1-Score: 0.81
+- **Random Forest:**
+  - Accuracy: 85%
+  - F1-Score: 0.85 (Recommended for deployment)
+- **LightGBM:**
+  - Accuracy: 84%
+  - F1-Score: 0.84 (Ideal for real-time applications)
 
-Exploratory Data Analysis:
-Identified high churn rates among month-to-month contract customers and electronic check users.
-Found tenure and monthly charges as significant churn predictors.
+---
 
-Model Development:
-Logistic Regression (baseline): Accuracy 81%, F1-score 0.81.
-Random Forest: Accuracy 85%, F1-score 0.85 (recommended for deployment).
-LightGBM: Accuracy 84%, F1-score 0.84 (ideal for real-time applications).
+## Results
 
-**Results**
+### Key Insights
+- **High churn drivers:**
+  - Month-to-month contracts.
+  - Electronic check payment methods.
+  - Short tenure and higher monthly charges.
 
-Key Insights:
-Month-to-month contracts and electronic check payments strongly correlate with churn.
-Short tenure and higher monthly charges increase churn likelihood.
+### Model Performance
+- **Random Forest** and **LightGBM** demonstrated robust performance with minimal overfitting.
 
-Model Performance:
-Random Forest and LightGBM demonstrated robust performance with minimal overfitting.
+---
 
-**Recommendations**
+## Recommendations
+1. Promote longer-term contracts to reduce churn risk.
+2. Offer alternative payment options for electronic check users.
+3. Design personalized retention strategies for high-risk customers:
+   - Short tenure.
+   - High monthly charges.
 
-Promote longer-term contracts to reduce churn risk.
-Offer alternative payment options for electronic check users.
-Design personalized retention strategies for high-risk customers (short tenure, high charges).
+---
 
-**Future Directions**
+## Future Directions
+- Incorporate real-time customer data and external datasets for enhanced predictions.
+- Explore advanced algorithms, including deep learning, for identifying complex patterns in larger datasets.
 
-Incorporate real-time customer data and external datasets for enhanced predictions.
-Explore advanced algorithms, including deep learning, for complex patterns in larger datasets.
+---
+
+## Tools and Technologies
+- **Programming Language:** Python
+- **Libraries and Frameworks:** Scikit-learn, LightGBM, XGBoost, CatBoost, Pandas, NumPy
+- **Data Visualization:** Matplotlib, Seaborn
+
+---
+
+## How to Use
+1. Clone this repository:
+   ```bash
+   git clone https://github.com/yourusername/telco-churn-prediction.git
