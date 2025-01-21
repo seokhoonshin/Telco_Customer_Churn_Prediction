@@ -77,7 +77,3 @@ This project focuses on predicting customer churn in the telecom industry using 
 
 ---
 
-## How to Use
-1. Clone this repository:
-   ```bash
-   git clone https://github.com/yourusername/telco-churn-prediction.git
